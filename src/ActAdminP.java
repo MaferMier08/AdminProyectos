@@ -20,4 +20,22 @@ public class ActAdminP {
         Assert.assertEquals(4.37,diameter,1);
         // Assert.assertEquals(5,diameter,-1);
     }
+    
+    @Test
+    // LETRAS MAYÚSCULAS
+    public void letters (){
+        String text="Hola";
+        System.out.println(text);
+        char letter = 'N';
+        for (int i=0;i<text.length(); i++)
+        {
+            if(Character.isUpperCase(text.charAt(i))){
+                letter = text.charAt(i);
+                System.out.println(text.charAt(i));
+                Assert.assertNotNull(text);
+                Assert.assertEquals("Letra esperada: ",'H',letter);
+                Assert.assertEquals("Letra incorrecta:",'A',letter);
+            }
+        }
+    }
 }
