@@ -7,42 +7,51 @@ public class ActAdminP {
     @Test
     //AREA DE UN CUADRADO
     public void Area  (){
+        // Formula de área
         float area = (float) Math.pow(2,2);
+        //Prueba positiva
         Assert.assertEquals(4.0,area,0);
+        //Prueba negativa
         Assert.assertEquals(3.0,area,1.0);
     }
     @Test
     // DIAMETRO DE UN CIRCULO
     public void Diameter (){
+        //Formula para calcular el diametro de un circulo teniendo el área
         float diameter = (float) (2* (Math.sqrt(15/Math.PI)));
         System.out.println("Diametro: "+diameter);
+        //Imprimir delta
         System.out.println("Delta: "+Math.abs(5-diameter));
+        //Prueba positiva
         Assert.assertEquals(4.37,diameter,1);
+        //prueba negativa 
         // Assert.assertEquals(5,diameter,-1);
     }
     
     @Test
     // LETRAS MAYÚSCULAS
     public void letters (){
+        //String a revisar
         String text="Hola";
         System.out.println(text);
         char letter = 'N';
+        //For que revisa todas las letras del string en busca de una mayúscula
         for (int i=0;i<text.length(); i++)
         {
             if(Character.isUpperCase(text.charAt(i))){
                 letter = text.charAt(i);
                 System.out.println(text.charAt(i));
                 Assert.assertNotNull(text);
+                //prueba positiva
                 Assert.assertEquals("Letra esperada: ",'H',letter);
+                //prueba negativa
                 Assert.assertEquals("Letra incorrecta:",'A',letter);
             }
         }
     }
     
-    // Variable prima
+    // Variable prima PETICIÓN DE INT
     public static void VarPrimos(String[] args) throws Exception {
-            
-    
             Scanner sc = new Scanner(System.in);
             System.out.print("Introduce la variable: ");  
             int num = sc.nextInt();  
@@ -51,6 +60,7 @@ public class ActAdminP {
     
     public static boolean nPrim(int num) 
     {
+            //For para revisar si es primo o no 
             boolean Variable = false;
             for (int i = 2; i <= num / 2; ++i) {
              
@@ -67,13 +77,14 @@ public class ActAdminP {
             return Variable;
           }   
 
-
+        //Prueba positiva
         @Test
         public void TestsPass() {
             boolean res = ActAdminP.nPrim(5);
             assertFalse(res);
 
         }
+        //Prueba negativa
         @Test
         public void TestFailed(){
             boolean res = ActAdminP.nPrim(9);
@@ -81,11 +92,10 @@ public class ActAdminP {
         }
 
     
-    
-    
-        // Numero - String
+        // Numero - String 
         public void NumStr(String[] args) 
         {
+            // PETICIÓN DE STRING
             boolean entradaNumerica = true;
             String entradaTeclado = "Ropa";
             System.out.println("Favor de introducir tu frase: ");
@@ -93,9 +103,7 @@ public class ActAdminP {
             entradaTeclado = entradaScanner.nextLine();
             System.out.println(entradaTeclado);
             
-            
-    
-    
+            // For que revisa si hay algún numero en el string
             for (int i=0;i< entradaTeclado.length(); i++) {
                 System.out.print ("Analizando si caracteres son dígitos..." + entradaTeclado.charAt(i));
     
@@ -143,13 +151,14 @@ public class ActAdminP {
             }
         
         
-    
+        //Prueba positiva
         @Test
         public void NumStrV(){
             boolean res = ActAdminP.nPrim2(4);
             assertFalse(res);
         }
 
+        //Prueba negativa
         @Test
         public void NumStrF(){
             boolean res = ActAdminP.nPrim2(4);
